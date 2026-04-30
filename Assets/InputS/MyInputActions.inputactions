@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "name": "MyInputActions",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "ebeb85bd-de20-4e45-b769-d7c5148241dd",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "b8fd2934-7436-4569-9a99-a6bca3ba17cc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d7fb4e95-5115-4e0c-a8fd-611a58da2a54",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Interacting",
+            "id": "94dea0ee-ef8a-41c3-a2bd-bdd719421582",
+            "actions": [
+                {
+                    "name": "SiguienteFrase",
+                    "type": "Button",
+                    "id": "47db86de-edc7-42b6-a44b-3bc3660c0728",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e68446fb-d212-469f-b34d-13295d8c5967",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SiguienteFrase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "93a22fdb-36ee-4b1f-b5e9-39b00e52c432",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SiguienteFrase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15464e17-10ed-4b56-8165-37ae33becd6b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SiguienteFrase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
