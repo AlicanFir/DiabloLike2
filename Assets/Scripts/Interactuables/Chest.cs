@@ -12,6 +12,6 @@ public class Chest : Interactuable
 
     public override void Interact(GameObject interactor)
     {
-        
+        Debug.Log("mmmm dinero");
     }
 }
