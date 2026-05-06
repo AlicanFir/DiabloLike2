@@ -15,6 +15,8 @@ public class DialogueSystem : MonoBehaviour
     private bool escribiendo = false;
 
     public event Action DialogoIniciado, DialogoTerminado;
+
+    private Vendor dialogActivator;
     
 
     private void Awake() // el singleton me arrastra la ui
@@ -36,16 +38,24 @@ public class DialogueSystem : MonoBehaviour
     }
 
 
-    public void IniciarDialogo(DialogueSO dialog)
+    public void IniciarDialogo(DialogueSO dialog, GameObject activator) //MIRO QUIEN ME HABLA
     {
         DialogoIniciado?.Invoke(); //evento para quitar inputs a player
+
+        if (activator.gameObject.TryGetComponent<Vendor>(out Vendor vendorScript)) //tiene el script de vendor
+        {
+            // set istalking a true
+            dialogActivator = vendorScript;
+            dialogActivator.isTalking = true;
+        }
+        //TODO IS TALKING A TRUE PARA QUE NO ME ABRA LA TIENDA TODAVIA
         
         dialogoActual = dialog;
         marcoDialogo.SetActive(true);
         StartCoroutine(EscribirFrase());
     }
 
-    private IEnumerator EscribirFrase()
+    private IEnumerator EscribirFrase() //typewriter
     {
         escribiendo = true;
         contenedorTexto.text = string.Empty;
@@ -73,7 +83,7 @@ public class DialogueSystem : MonoBehaviour
         {
             CompletarFrase();
         }
-        else //TODO
+        else 
         {
             indiceFraseActual++;
             if (indiceFraseActual < dialogoActual.frases.Length) //miro si hay frases disponibles
@@ -91,9 +101,18 @@ public class DialogueSystem : MonoBehaviour
     {
         DialogoTerminado.Invoke();
         
+        if (dialogActivator != null) // si es un vendedor
+        {
+            dialogActivator.isTalking = false;
+        }
+        
         marcoDialogo.SetActive(false);
         indiceFraseActual = 0;
+        
         dialogoActual = null;
+        dialogActivator = null;
+
+
     }
     
 }

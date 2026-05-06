@@ -8,6 +8,8 @@ public class NPC : Interactuable
     [SerializeField] private Color interactionColor;
     [SerializeField] private DialogueSO npcDialogue;
 
+    [SerializeField] private float timeAnimation;
+
     protected override void Awake()
     {
         base.Awake();
@@ -18,12 +20,13 @@ public class NPC : Interactuable
 
     public override void Interact(GameObject interactor)
     {
-        transform.DOLookAt(interactor.transform.position, 2f, AxisConstraint.Y).OnComplete(DoInteraction);
+        transform.DOLookAt(interactor.transform.position, timeAnimation, AxisConstraint.Y).OnComplete(DoInteraction);
         
     }
 
     private void DoInteraction()
     {
-        DialogueSystem.Instance.IniciarDialogo(npcDialogue);
+        DialogueSystem.Instance.IniciarDialogo(npcDialogue, this.gameObject);
     }
+    
 }
