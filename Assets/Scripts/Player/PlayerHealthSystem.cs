@@ -1,4 +1,5 @@
 using System;
+using DefaultNamespace;
 using UnityEngine;
 
 public class PlayerHealthSystem : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerHealthSystem : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
+   
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
@@ -23,7 +25,15 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             CurrentHealth = MaxHealth;
         }
-        
+    }
+
+    public void HealSkillActive(float healedValor)
+    {
+        CurrentHealth =+ healedValor;
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
     }
 
     public void Death()

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b1b9508cb524687973f4157e900a0db, type: 3}
-  m_Name: FireBall
+  m_Name: AutoHeal
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.ProyectileSkillSO
-  cooldown: 2
+  cooldown: 5
   manaCost: 0
   timeStamp: 0
-  proyectilePrefab: {fileID: 492947869301838024, guid: b39458c2f6253ed4d8a0c42757d1ad3d, type: 3}
+  proyectilePrefab: {fileID: 0}

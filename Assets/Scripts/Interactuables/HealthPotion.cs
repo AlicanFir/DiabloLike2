@@ -20,6 +20,7 @@ public class HealthPotion : Interactuable
         if (interactor.TryGetComponent(out PlayerHealthSystem playerHealth))
         {
             playerHealth.HealPlayer(heal);
+            Destroy(this.gameObject);
         }
         
     }

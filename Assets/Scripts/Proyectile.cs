@@ -12,5 +12,15 @@ namespace DefaultNamespace
         {
             GetComponent<Rigidbody>().linearVelocity = proyectileSpeed * transform.forward;
         }
+
+        private void Update()
+        {
+            float timer = 0f;
+            if (timer >= 20)
+            {
+                Destroy(this.gameObject);
+            }
+            timer += Time.deltaTime;
+        }
     }
 }

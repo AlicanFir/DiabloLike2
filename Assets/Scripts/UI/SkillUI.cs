@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class SkillUI : MonoBehaviour
 {
     [SerializeField] private Image fadingCooldown;
-
     [SerializeField] private SkillSO skill;
 
     private void OnEnable()
@@ -30,8 +29,10 @@ public class SkillUI : MonoBehaviour
         float remaining = 0f;
         while (remaining < skill.cooldown)
         {
-            remaining = skill.GetRemainingCooldown();
-            fadingCooldown.fillAmount = remaining / skill.cooldown;
+            //remaining = skill.GetRemainingCooldown();
+            remaining =+ Time.deltaTime;
+            Debug.Log(remaining);
+            fadingCooldown.fillAmount = remaining;
             yield return null; //vuelve al siguiente frame, es como un update y cuando el while termina el "update" muere.
         }
         fadingCooldown.fillAmount = 1f;
