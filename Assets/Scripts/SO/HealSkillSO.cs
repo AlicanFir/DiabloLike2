@@ -8,7 +8,7 @@ namespace DefaultNamespace
     {
         public float healValor;
 
-        public event Action heal;
+        public event Action Heal;
         
         protected override void ExecuteSkill(GameObject caster, Vector3 cursorPoint) // no lo necesitamos
         {
@@ -17,7 +17,7 @@ namespace DefaultNamespace
         protected override void ExecuteSkill(GameObject caster)
         {
             //implementa el evento de curacion que esta escuchando el player
-            heal?.Invoke();
+            Heal?.Invoke();
         }
     }
 }

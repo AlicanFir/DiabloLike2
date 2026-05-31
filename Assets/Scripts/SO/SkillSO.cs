@@ -42,6 +42,8 @@ namespace DefaultNamespace
         public void TryCastSkill(GameObject caster) // propia a corta distancia
         {
             if (!IsReady()) return;
+
+            timeStamp = Time.time + cooldown;
             OnExecute?.Invoke();
             ExecuteSkill(caster);
         }

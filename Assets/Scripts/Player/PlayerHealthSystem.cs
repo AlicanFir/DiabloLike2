@@ -1,47 +1,68 @@
 using System;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
-    [SerializeField] private float CurrentHealth;
-    [SerializeField] private float MaxHealth;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth;
+
+    [SerializeField] private Image UIHealth;
+    [SerializeField] private GameObject gameOverScreen;
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+        gameOverScreen.SetActive(false);
+    }
 
     private void Awake()
     {
-        CurrentHealth = MaxHealth;
+        currentHealth = maxHealth;
+        UpdateUI(currentHealth);
     }
 
    
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
+        currentHealth -= damage;
+        UpdateUI(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+        
     }
 
     public void HealPlayer(float healed)
     {
-        CurrentHealth = +healed;
-        if (CurrentHealth > MaxHealth)
+        currentHealth += healed;
+        if (currentHealth > maxHealth)
         {
-            CurrentHealth = MaxHealth;
+            currentHealth = maxHealth;
         }
+        UpdateUI(currentHealth);
     }
 
     public void HealSkillActive(float healedValor)
     {
-        CurrentHealth =+ healedValor;
-        if (CurrentHealth > MaxHealth)
+        currentHealth =+ healedValor;
+        if (currentHealth > maxHealth)
         {
-            CurrentHealth = MaxHealth;
+            currentHealth = maxHealth;
         }
     }
 
     public void Death()
+    { 
+        gameOverScreen.SetActive(true); 
+        Time.timeScale = 0;
+
+    }
+
+    private void UpdateUI(float health)
     {
-        if (CurrentHealth <= 0)
-        {
-            //TODO GAME OVER
-            Debug.Log("Muri");
-        }
+        UIHealth.fillAmount = health / maxHealth;
     }
 }

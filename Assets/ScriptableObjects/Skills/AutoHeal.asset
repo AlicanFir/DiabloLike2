@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1b9508cb524687973f4157e900a0db, type: 3}
   m_Name: AutoHeal
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.ProyectileSkillSO
-  cooldown: 5
+  cooldown: 10
   manaCost: 0
   timeStamp: 0
   proyectilePrefab: {fileID: 0}

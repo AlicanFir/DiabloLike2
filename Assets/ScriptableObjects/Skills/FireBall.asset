@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.ProyectileSkillSO
   cooldown: 2
   manaCost: 0
-  timeStamp: 0
+  timeStamp: 8.990229
   proyectilePrefab: {fileID: 492947869301838024, guid: b39458c2f6253ed4d8a0c42757d1ad3d, type: 3}

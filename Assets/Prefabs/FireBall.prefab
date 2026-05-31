@@ -48,7 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a349764f1f9d4b3183b4be333b06a889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.Proyectile
-  proyectileSpeed: 3
+  proyectileSpeed: 20
+  proyectileDamage: 20
+  collisionRadius: 0.36
+  canCollision:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!33 &1988922451430982645
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82,7 +87,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4534d8cdf307fe341891638e0d407ab8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

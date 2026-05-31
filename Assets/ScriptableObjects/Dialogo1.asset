@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dialogo1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   frases:
-  - "\xA1Hola Aventurero, te esperan grandes aventuras!"
-  - "Mi abuelita est\xE1 enferma, puedes buscar 10 setas en el bosque porhibido para
-    curarla?"
-  - "Si lo consigues te recompensar\xE9."
+  - "Aventurera, \xBFPodr\xEDas ayudarme?"
+  - Tengo que encontrar el anillo de compromiso para mi querida dulcinea.
+  - "Se que lo dej\xE9 en un cofre, \xA1Pero no me acuerdo cual!"
+  - Anda hazme el favor de ir a buscarlo.
   tiempoEntreLetras: 0.05
   colorDialogo: {r: 1, g: 0.9152342, b: 0.69946086, a: 1}
   faceSprite: {fileID: 0}
